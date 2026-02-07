@@ -21,8 +21,8 @@ def extract_pdf_content(pdf_path):
         Extracted text content as a string
     """
     try:
-        with open(pdf_path, 'rb') as file:
-            pdf_reader = PyPDF2.PdfReader(file)
+        with open(pdf_path, 'rb') as pdf_file:
+            pdf_reader = PyPDF2.PdfReader(pdf_file)
             content = []
             
             # Extract text from each page
@@ -33,7 +33,7 @@ def extract_pdf_content(pdf_path):
             
             return '\n'.join(content)
     except FileNotFoundError:
-        return f"Error: File '{pdf_path}' not found."
+        return f"Error: File '{pdf_path}' not found. Ensure the PDF files are in the same directory as this script."
     except Exception as e:
         return f"Error reading '{pdf_path}': {str(e)}"
 
