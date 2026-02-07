@@ -16,6 +16,31 @@ To list all details from both election list files, run:
 python3 list_details.py
 ```
 
+## Export to Excel (English + Marathi)
+
+This uses OCR to capture both Marathi and English names from the PDFs.
+
+### System dependencies
+
+Install Tesseract and Poppler (required by `pytesseract` and `pdf2image`):
+
+```bash
+sudo apt-get update
+sudo apt-get install -y tesseract-ocr tesseract-ocr-mar poppler-utils
+```
+
+### Python dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run export
+
+```bash
+python3 export_to_excel.py --output election_list.xlsx
+```
+
 ### Requirements
 
 The script requires Python 3 and the PyPDF2 library. Install the dependency with:
